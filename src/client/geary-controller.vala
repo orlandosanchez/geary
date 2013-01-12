@@ -580,7 +580,9 @@ public class GearyController {
         main_window.conversation_viewer.unhide_last_email();
         
         // Mark as read.
-        yield mark_as_read_async(unread_ids, cancellable);
+        if (GearyApplication.instance.config.auto_mark_read) {
+          yield mark_as_read_async(unread_ids, cancellable);
+        }
     }
     
     private async void mark_as_read_async(Gee.List<Geary.EmailIdentifier> unread_ids,

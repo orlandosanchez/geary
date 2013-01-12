@@ -82,7 +82,17 @@ public class Configuration {
             settings.set_boolean(SHOW_NOTIFICATIONS_NAME, value);
         }
     }
-    
+   
+
+    private const string AUTO_MARK_READ_NAME= "auto-mark-read";
+    public bool auto_mark_read {
+        get { return settings.get_boolean(AUTO_MARK_READ_NAME); }
+        set {
+            settings.set_boolean(AUTO_MARK_READ_NAME, value);
+        }
+    }
+
+
     private const string CLOCK_FORMAT_NAME = "clock-format";
     private const string TIME_FORMAT_NAME = "time-format";
     public Date.ClockFormat clock_format {

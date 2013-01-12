@@ -57,7 +57,12 @@
     <key name="show-notifications" type="b">
         <default>true</default>
         <summary>show notifications for new mail</summary>
-        <description>True to show notification bubbles.</description>
+        <description>true to show notification bubbles.</description>
+    </key>
+    <key name="auto-mark-read" type="b">
+        <default>true</default>
+        <summary>automatically mark messages as read</summary>
+        <description>true to automatically mark messages as read.</description>
     </key>
     <key name="ask-open-attachment" type="b">
         <default>true</default>
