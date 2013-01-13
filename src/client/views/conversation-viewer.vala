@@ -412,7 +412,8 @@ public class ConversationViewer : Object {
     }
     
     public void add_message(Geary.Email email) {
-        set_load_external_images(false);
+        
+        set_load_external_images(GearyApplication.instance.config.always_show_images);
         
         // Make sure the message container is showing and the multi-message counter hidden.
         try {

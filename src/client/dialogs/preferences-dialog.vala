@@ -12,6 +12,7 @@ public class PreferencesDialog : Object {
     private Gtk.CheckButton play_sounds;
     private Gtk.CheckButton show_notifications;
     private Gtk.CheckButton auto_mark_read;
+    private Gtk.CheckButton always_show_images;
     private Gtk.Button close_button;
     private Configuration config;
     
@@ -27,6 +28,7 @@ public class PreferencesDialog : Object {
         play_sounds = builder.get_object("play_sounds") as Gtk.CheckButton;
         show_notifications = builder.get_object("show_notifications") as Gtk.CheckButton;
         auto_mark_read = builder.get_object("auto_mark_read") as Gtk.CheckButton;
+        always_show_images = builder.get_object("always_show_images") as Gtk.CheckButton;
         close_button = builder.get_object("close_button") as Gtk.Button;
         
         // Populate the dialog with our current settings.
@@ -36,6 +38,7 @@ public class PreferencesDialog : Object {
         play_sounds.active = config.play_sounds;
         show_notifications.active = config.show_notifications;
         auto_mark_read.active = config.auto_mark_read;
+        always_show_images.active = config.always_show_images;
         
         // Connect to element signals.
         autoselect.toggled.connect(on_autoselect_toggled);
@@ -44,6 +47,7 @@ public class PreferencesDialog : Object {
         play_sounds.toggled.connect(on_play_sounds_toggled);
         show_notifications.toggled.connect(on_show_notifications_toggled);
         auto_mark_read.toggled.connect(on_auto_mark_read_toggled);
+        always_show_images.toggled.connect(on_always_show_images_toggled);
         
         GearyApplication.instance.exiting.connect(on_exit);
     }
@@ -82,6 +86,10 @@ public class PreferencesDialog : Object {
 
     private void on_auto_mark_read_toggled() {
         config.auto_mark_read = auto_mark_read.active;
+    }
+    
+    private void on_always_show_images_toggled() {
+        config.always_show_images = always_show_images.active;
     }
 }
 

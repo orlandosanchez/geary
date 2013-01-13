@@ -93,6 +93,15 @@ public class Configuration {
     }
 
 
+    private const string ALWAYS_SHOW_IMAGES_NAME= "always-show-images";
+    public bool always_show_images {
+        get { return settings.get_boolean(ALWAYS_SHOW_IMAGES_NAME); }
+        set {
+            settings.set_boolean(ALWAYS_SHOW_IMAGES_NAME, value);
+        }
+    }
+
+
     private const string CLOCK_FORMAT_NAME = "clock-format";
     private const string TIME_FORMAT_NAME = "time-format";
     public Date.ClockFormat clock_format {
